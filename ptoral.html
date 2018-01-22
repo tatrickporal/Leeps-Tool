@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<title>ptoral</title>
+	<style type="text/css">
+		h1{
+			text-align: center;
+			color:green;
+		}
+		p{
+			color: green;
+			font-size: 18px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="page-header">
+		<h1>
+			$ Where'd it go? $
+		</h1>
+	</div>
+	<div class="row">
+		<p>Enter a value ranging from 0.00 -> 1.00</p>
+		<input id="UserInput" value="0.00" class="center-block" step="0.01" type="number" min="0.00" max="1.00">
+		<br>
+		<button class="btn btn-success center-block" onclick="revealProfit($('#UserInput').val())">Reveal Profit Graph</button>
+		<p><a href="ptoral.html" style="text-align: center;">Reset Graph</a></p>
+		<br>
+		<div class="row">
+				<div class="center-block">
+					<p style="border-bottom:solid black 1px; text-align: center;">
+						Quarterly Stats	
+					</p>
+					<p id="currentQuarter"></p>
+					<p id="quarterProfit"></p>
+					<p id="profitAverage"></p>
+					<p id="runningProfit"></p>
+
+				</div>
+			</div>
+	</div>
+	<div class="row">
+		 <div class="center-block" id="PriceGraph"><!-- Plotly chart will be drawn inside this DIV --></div>
+	</div>
+</div>
+<script src="ptoral.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
